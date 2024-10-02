@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 using Core.Interfaces;
 using Infrastructure.Data;
 using Infrastructure.Data.SeedData;
+=======
+using Infrastructure.Data;
+>>>>>>> 3fe0503b934348a15443e9d28ffa5fc22584c40e
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +16,11 @@ builder.Services.AddDbContext<StoreContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+<<<<<<< HEAD
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+=======
+
+>>>>>>> 3fe0503b934348a15443e9d28ffa5fc22584c40e
 
 var app = builder.Build();
 
@@ -20,6 +28,7 @@ var app = builder.Build();
 
 app.MapControllers();
 
+<<<<<<< HEAD
 try
 {
     using var scope = app.Services.CreateScope();
@@ -34,4 +43,6 @@ catch (Exception ex)
     throw;
 }
 
+=======
+>>>>>>> 3fe0503b934348a15443e9d28ffa5fc22584c40e
 app.Run();
